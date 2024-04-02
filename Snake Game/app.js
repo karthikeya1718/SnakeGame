@@ -119,25 +119,41 @@ function startgame() {
 
 function handlekeypress(event) {
   if (
-    (!gamestarted && event.code === "space") ||
-    (!gamestarted && event.key === " ")
+      (!gamestarted && event.code === "Space") ||
+      (!gamestarted && event.key === " ")
   ) {
-    startgame();
+      startgame();
   } else {
-    switch (event.key) {
-      case "ArrowUp":
-        direction = "up";
-        break;
-      case "ArrowDown":
-        direction = "down";
-        break;
-      case "ArrowLeft":
-        direction = "left";
-        break;
-      case "ArrowRight":
-        direction = "right";
-        break;
-    }
+      switch (event.key) {
+          case "ArrowUp":
+          case "W":
+          case "w":
+              if (snake.length < 3 || direction !== "down") {
+                  direction = "up";
+              }
+              break;
+          case "ArrowDown":
+          case "S":
+          case "s":
+              if (snake.length < 3 || direction !== "up") {
+                  direction = "down";
+              }
+              break;
+          case "ArrowLeft":
+          case "A":
+          case "a":
+              if (snake.length < 3 || direction !== "right") {
+                  direction = "left";
+              }
+              break;
+          case "ArrowRight":
+          case "D":
+          case "d":
+              if (snake.length < 3 || direction !== "left") {
+                  direction = "right";
+              }
+              break;
+      }
   }
 }
 
