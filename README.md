@@ -1,0 +1,1 @@
+Developed using HTML, CSS, and JavaScript, this game brings back the charm of retro gaming with modern web technologies. Implemented core mechanics such as snake movement, collision detection, and score tracking. Designed user-friendly controls, drawing on arrow key inputs for directional movement.
